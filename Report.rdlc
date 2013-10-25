@@ -1,0 +1,1917 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Report xmlns:rd="http://schemas.microsoft.com/SQLServer/reporting/reportdesigner" xmlns="http://schemas.microsoft.com/sqlserver/reporting/2008/01/reportdefinition">
+  <DataSources>
+    <DataSource Name="DataSet">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>be994b32-9417-4e2d-9e67-eab8b6ec5113</rd:DataSourceID>
+    </DataSource>
+  </DataSources>
+  <DataSets>
+    <DataSet Name="Performance">
+      <Fields>
+        <Field Name="supplierID">
+          <DataField>supplierID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="date">
+          <DataField>date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="total">
+          <DataField>total</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="totalIn">
+          <DataField>totalIn</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="totalOut">
+          <DataField>totalOut</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="inOT">
+          <DataField>inOT</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="outOT">
+          <DataField>outOT</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="damaged">
+          <DataField>damaged</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="lost">
+          <DataField>lost</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="serviceRT">
+          <DataField>serviceRT</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="quoteRT">
+          <DataField>quoteRT</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="invoiceIssues">
+          <DataField>invoiceIssues</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="distFeedback">
+          <DataField>distFeedback</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="rates">
+          <DataField>rates</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="contImprove">
+          <DataField>contImprove</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+        <Field Name="overallPercent">
+          <DataField>overallPercent</DataField>
+          <rd:TypeName>System.Byte</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\inetpub\wwwroot\SupplierScoreCard\App_Code\DataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Performance</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>PerformanceTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Suppliers">
+      <Fields>
+        <Field Name="supplierID">
+          <DataField>supplierID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="supplierName">
+          <DataField>supplierName</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="active">
+          <DataField>active</DataField>
+          <rd:TypeName>System.Boolean</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\inetpub\wwwroot\SupplierScoreCard\App_Code\DataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Suppliers</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>SuppliersTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="Dates">
+      <Fields>
+        <Field Name="date">
+          <DataField>date</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="overallPercent">
+          <DataField>overallPercent</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="target">
+          <DataField>target</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+        <Field Name="supplierID">
+          <DataField>supplierID</DataField>
+          <rd:TypeName>System.Int16</rd:TypeName>
+        </Field>
+      </Fields>
+      <Query>
+        <DataSourceName>DataSet</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <rd:DataSetInfo>
+        <rd:DataSetName>DataSet</rd:DataSetName>
+        <rd:SchemaPath>C:\inetpub\wwwroot\SupplierScoreCard\App_Code\DataSet.xsd</rd:SchemaPath>
+        <rd:TableName>Dates</rd:TableName>
+        <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
+        <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
+        <rd:TableAdapterName>DatesTableAdapter</rd:TableAdapterName>
+      </rd:DataSetInfo>
+    </DataSet>
+  </DataSets>
+  <Body>
+    <ReportItems>
+      <Rectangle Name="Rectangle6">
+        <ReportItems>
+          <Rectangle Name="Rectangle7">
+            <ReportItems>
+              <Textbox Name="overallPercent">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=First(Fields!overallPercent.Value, "Performance")/100</Value>
+                        <Style>
+                          <FontSize>12pt</FontSize>
+                          <FontWeight>Bold</FontWeight>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <rd:DefaultName>overallPercent</rd:DefaultName>
+                <Top>0.07986in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BottomBorder>
+                    <Style>Double</Style>
+                    <Width>3pt</Width>
+                  </BottomBorder>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="inOT">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!inOT.Value, "Performance")/Sum(Fields!totalIn.Value, "Performance")</Value>
+                        <Style>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.71875in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>1</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="outOT">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!outOT.Value, "Performance")/Sum(Fields!totalOut.Value, "Performance")</Value>
+                        <Style>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.02778in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>2</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BottomBorder>
+                    <Style>Solid</Style>
+                  </BottomBorder>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="totOT">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=((Sum(Fields!inOT.Value, "Performance")/Sum(Fields!totalIn.Value, "Performance"))*.5)+((Sum(Fields!outOT.Value, "Performance")/Sum(Fields!totalOut.Value, "Performance"))*.5)</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>0.39931in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>3</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="ci">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!contImprove.Value, "Performance")/5</Value>
+                        <Style>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>4.54167in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>4</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BottomBorder>
+                    <Style>Double</Style>
+                    <Width>3pt</Width>
+                  </BottomBorder>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="compRate">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=((Sum(Fields!rates.Value, "Performance")/5)*.75)+((Sum(Fields!contImprove.Value, "Performance")/5)*.25)</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>3.90278in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>5</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="ddf">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!distFeedback.Value, "Performance")/5</Value>
+                        <Style>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>3.58333in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>6</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BottomBorder>
+                    <Style>Solid</Style>
+                  </BottomBorder>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="ii">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!invoiceIssues.Value, "Performance")/5</Value>
+                        <Style>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>3.26389in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>7</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="rq">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!quoteRT.Value, "Performance")/5</Value>
+                        <Style>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>2.94444in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>8</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="cs">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!serviceRT.Value, "Performance")/5</Value>
+                        <Style>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>2.625in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>9</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="custService">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=((Sum(Fields!serviceRT.Value, "Performance")/5)*.4)+((Sum(Fields!quoteRT.Value, "Performance")/5)*.1)+((Sum(Fields!invoiceIssues.Value, "Performance")/5)*.1)+((Sum(Fields!distFeedback.Value, "Performance")/5)*.4)</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>2.30556in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>10</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="lost">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=(Sum(Fields!total.Value, "Performance")-Sum(Fields!lost.Value, "Performance"))/Sum(Fields!total.Value, "Performance")</Value>
+                        <Style>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.98611in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>11</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <BottomBorder>
+                    <Style>Solid</Style>
+                  </BottomBorder>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="dam">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=(Sum(Fields!total.Value, "Performance")-Sum(Fields!damaged.Value, "Performance"))/Sum(Fields!total.Value, "Performance")</Value>
+                        <Style>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.66667in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>12</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="compDelivery">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=(((Sum(Fields!total.Value, "Performance")-Sum(Fields!damaged.Value, "Performance"))/Sum(Fields!total.Value, "Performance"))*.5)+(((Sum(Fields!total.Value, "Performance")-Sum(Fields!lost.Value, "Performance"))/Sum(Fields!total.Value, "Performance"))*.5)</Value>
+                        <Style>
+                          <FontWeight>Bold</FontWeight>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>1.34722in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>13</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+              <Textbox Name="compRates">
+                <CanGrow>true</CanGrow>
+                <KeepTogether>true</KeepTogether>
+                <Paragraphs>
+                  <Paragraph>
+                    <TextRuns>
+                      <TextRun>
+                        <Value>=Sum(Fields!rates.Value, "Performance")/5</Value>
+                        <Style>
+                          <Format>0%</Format>
+                        </Style>
+                      </TextRun>
+                    </TextRuns>
+                    <Style />
+                  </Paragraph>
+                </Paragraphs>
+                <Top>4.22222in</Top>
+                <Height>0.25in</Height>
+                <Width>0.5in</Width>
+                <ZIndex>14</ZIndex>
+                <Style>
+                  <Border>
+                    <Style>None</Style>
+                  </Border>
+                  <PaddingLeft>2pt</PaddingLeft>
+                  <PaddingRight>2pt</PaddingRight>
+                  <PaddingTop>2pt</PaddingTop>
+                  <PaddingBottom>2pt</PaddingBottom>
+                </Style>
+              </Textbox>
+            </ReportItems>
+            <KeepTogether>true</KeepTogether>
+            <Left>3.07639in</Left>
+            <Height>5in</Height>
+            <Width>0.56944in</Width>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+            </Style>
+          </Rectangle>
+          <Textbox Name="Textbox28">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Overall Score:</Value>
+                    <Style>
+                      <FontSize>12pt</FontSize>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox28</rd:DefaultName>
+            <Top>0.07986in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>1</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Double</Style>
+                <Width>3pt</Width>
+              </BottomBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox30">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>On Time Delivery (40% Weight)</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox30</rd:DefaultName>
+            <Top>0.39931in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>2</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox31">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Inbound (50% Weight)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox31</rd:DefaultName>
+            <Top>0.70833in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>3</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox32">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Outbound (50% Weight)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox32</rd:DefaultName>
+            <Top>1.02778in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>4</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Solid</Style>
+              </BottomBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox33">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Complete Delivery (30% Weight)</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox30</rd:DefaultName>
+            <Top>1.34722in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>5</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox39">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Cust. Service Response Time (40% Weight)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox39</rd:DefaultName>
+            <Top>2.625in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>6</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox52">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Competitive Rates (75% Weight)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox39</rd:DefaultName>
+            <Top>4.22222in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>7</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox53">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Cost Savings (15% Weight)</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox39</rd:DefaultName>
+            <Top>3.90278in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>8</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox55">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Invoicing Issues (10% Weight)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox39</rd:DefaultName>
+            <Top>3.26389in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>9</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox56">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Rate Quote Response Time (10% Weight)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox39</rd:DefaultName>
+            <Top>2.94444in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>10</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox57">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Customer Service (15% Weight)</Value>
+                    <Style>
+                      <FontWeight>Bold</FontWeight>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox39</rd:DefaultName>
+            <Top>2.30556in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>11</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox58">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Lost (50% Weight)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox39</rd:DefaultName>
+            <Top>1.98611in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>12</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Solid</Style>
+              </BottomBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox59">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Damaged (50% Weight)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox39</rd:DefaultName>
+            <Top>1.66667in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>13</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox54">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Distribution Dept. Feedback (40% Weight)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox39</rd:DefaultName>
+            <Top>3.58333in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>14</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Solid</Style>
+              </BottomBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox51">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>Continuous Improvement Efforts (25% Weight)</Value>
+                    <Style />
+                  </TextRun>
+                </TextRuns>
+                <Style />
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox39</rd:DefaultName>
+            <Top>4.54167in</Top>
+            <Left>0.06944in</Left>
+            <Height>0.25in</Height>
+            <Width>3.00695in</Width>
+            <ZIndex>15</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <BottomBorder>
+                <Style>Double</Style>
+                <Width>3pt</Width>
+              </BottomBorder>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+        </ReportItems>
+        <KeepTogether>true</KeepTogether>
+        <Left>6.35417in</Left>
+        <Height>5in</Height>
+        <Width>3.64583in</Width>
+        <Style>
+          <Border>
+            <Style>None</Style>
+          </Border>
+        </Style>
+      </Rectangle>
+      <Chart Name="Chart1">
+        <ChartCategoryHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Group Name="Chart1_CategoryGroup1">
+                <GroupExpressions>
+                  <GroupExpression>=Fields!date.Value</GroupExpression>
+                </GroupExpressions>
+              </Group>
+              <Label>=Fields!date.Value</Label>
+            </ChartMember>
+          </ChartMembers>
+        </ChartCategoryHierarchy>
+        <ChartSeriesHierarchy>
+          <ChartMembers>
+            <ChartMember>
+              <Label>overall Percent</Label>
+            </ChartMember>
+            <ChartMember>
+              <Label />
+            </ChartMember>
+          </ChartMembers>
+        </ChartSeriesHierarchy>
+        <ChartData>
+          <ChartSeriesCollection>
+            <ChartSeries Name="overallPercent">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=Sum(Fields!overallPercent.Value)</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                    <UseValueAsLabel>true</UseValueAsLabel>
+                    <Visible>true</Visible>
+                  </ChartDataLabel>
+                  <Style />
+                  <ChartMarker>
+                    <Type>Diamond</Type>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Type>Line</Type>
+              <Subtype>Smooth</Subtype>
+              <Style>
+                <ShadowOffset>0pt</ShadowOffset>
+              </Style>
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Performance Score</LegendText>
+              </ChartItemInLegend>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+            <ChartSeries Name="target">
+              <ChartDataPoints>
+                <ChartDataPoint>
+                  <ChartDataPointValues>
+                    <Y>=95</Y>
+                  </ChartDataPointValues>
+                  <ChartDataLabel>
+                    <Style />
+                  </ChartDataLabel>
+                  <Style>
+                    <Color>Green</Color>
+                  </Style>
+                  <ChartMarker>
+                    <Style />
+                  </ChartMarker>
+                  <DataElementOutput>Output</DataElementOutput>
+                  <ChartItemInLegend>
+                    <LegendText>Target %</LegendText>
+                  </ChartItemInLegend>
+                </ChartDataPoint>
+              </ChartDataPoints>
+              <Type>Line</Type>
+              <Subtype>Smooth</Subtype>
+              <Style />
+              <ChartEmptyPoints>
+                <Style />
+                <ChartMarker>
+                  <Style />
+                </ChartMarker>
+                <ChartDataLabel>
+                  <Style />
+                </ChartDataLabel>
+              </ChartEmptyPoints>
+              <ChartItemInLegend>
+                <LegendText>Target 95%</LegendText>
+              </ChartItemInLegend>
+              <ValueAxisName>Primary</ValueAxisName>
+              <CategoryAxisName>Primary</CategoryAxisName>
+              <ChartSmartLabel>
+                <CalloutLineColor>Black</CalloutLineColor>
+                <MinMovingDistance>0pt</MinMovingDistance>
+              </ChartSmartLabel>
+            </ChartSeries>
+          </ChartSeriesCollection>
+        </ChartData>
+        <ChartAreas>
+          <ChartArea Name="Default">
+            <ChartCategoryAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                  <Format>MMM yyyy</Format>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption />
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <Interval>1</Interval>
+                <IntervalType>Months</IntervalType>
+                <ChartMajorGridLines>
+                  <Enabled>True</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Scalar>true</Scalar>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+                <Angle>-45</Angle>
+                <AllowLabelRotation>Rotate45</AllowLabelRotation>
+                <LabelsAutoFitDisabled>true</LabelsAutoFitDisabled>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Enabled>False</Enabled>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+              </ChartAxis>
+            </ChartCategoryAxes>
+            <ChartValueAxes>
+              <ChartAxis Name="Primary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Performance Score (%)</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <Interval>10</Interval>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Style>
+                    <Border>
+                      <Width>0.5pt</Width>
+                    </Border>
+                  </Style>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Minimum>0</Minimum>
+                <Maximum>100</Maximum>
+              </ChartAxis>
+              <ChartAxis Name="Secondary">
+                <Style>
+                  <FontSize>8pt</FontSize>
+                </Style>
+                <ChartAxisTitle>
+                  <Caption>Axis Title</Caption>
+                  <Style>
+                    <FontSize>8pt</FontSize>
+                  </Style>
+                </ChartAxisTitle>
+                <ChartMajorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                    </Border>
+                  </Style>
+                </ChartMajorGridLines>
+                <ChartMinorGridLines>
+                  <Style>
+                    <Border>
+                      <Color>Gainsboro</Color>
+                      <Style>Dotted</Style>
+                    </Border>
+                  </Style>
+                </ChartMinorGridLines>
+                <ChartMinorTickMarks>
+                  <Length>0.5</Length>
+                </ChartMinorTickMarks>
+                <CrossAt>NaN</CrossAt>
+                <Location>Opposite</Location>
+                <Minimum>NaN</Minimum>
+                <Maximum>NaN</Maximum>
+              </ChartAxis>
+            </ChartValueAxes>
+            <ChartThreeDProperties>
+              <Rotation>15</Rotation>
+              <DepthRatio>50</DepthRatio>
+              <GapDepth>50</GapDepth>
+            </ChartThreeDProperties>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <ShadowOffset>3pt</ShadowOffset>
+            </Style>
+          </ChartArea>
+        </ChartAreas>
+        <ChartLegends>
+          <ChartLegend Name="Default">
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontSize>8pt</FontSize>
+              <ShadowOffset>0pt</ShadowOffset>
+            </Style>
+            <Position>BottomCenter</Position>
+            <ChartLegendTitle>
+              <Caption />
+              <Style>
+                <FontSize>8pt</FontSize>
+                <FontWeight>Bold</FontWeight>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </ChartLegendTitle>
+            <HeaderSeparatorColor>Black</HeaderSeparatorColor>
+            <ColumnSeparatorColor>Black</ColumnSeparatorColor>
+          </ChartLegend>
+        </ChartLegends>
+        <ChartTitles>
+          <ChartTitle Name="Default">
+            <Caption>Past Performance</Caption>
+            <Style>
+              <BackgroundGradientType>None</BackgroundGradientType>
+              <FontWeight>Bold</FontWeight>
+              <TextAlign>General</TextAlign>
+              <VerticalAlign>Top</VerticalAlign>
+            </Style>
+          </ChartTitle>
+        </ChartTitles>
+        <Palette>EarthTones</Palette>
+        <ChartBorderSkin>
+          <ChartBorderSkinType>Emboss</ChartBorderSkinType>
+          <Style>
+            <BackgroundColor>Gray</BackgroundColor>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <Color>White</Color>
+          </Style>
+        </ChartBorderSkin>
+        <ChartNoDataMessage Name="NoDataMessage">
+          <Caption>No Data Available</Caption>
+          <Style>
+            <BackgroundGradientType>None</BackgroundGradientType>
+            <TextAlign>General</TextAlign>
+            <VerticalAlign>Top</VerticalAlign>
+          </Style>
+        </ChartNoDataMessage>
+        <DataSetName>Dates</DataSetName>
+        <Top>0.01042in</Top>
+        <Height>4.93056in</Height>
+        <Width>6.35417in</Width>
+        <ZIndex>1</ZIndex>
+        <Style>
+          <Border>
+            <Color>LightGrey</Color>
+            <Style>Solid</Style>
+          </Border>
+          <BackgroundColor>White</BackgroundColor>
+          <BackgroundGradientType>None</BackgroundGradientType>
+        </Style>
+      </Chart>
+    </ReportItems>
+    <Height>5in</Height>
+    <Style />
+  </Body>
+  <Width>10in</Width>
+  <Page>
+    <PageHeader>
+      <Height>1.5in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Rectangle Name="Rectangle1">
+          <ReportItems>
+            <Textbox Name="Textbox4">
+              <CanGrow>true</CanGrow>
+              <KeepTogether>true</KeepTogether>
+              <Paragraphs>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Irwin Quality Policy</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Bold</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>Commitment of Customer Satisfaction:</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>      1. On Time and Complete</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>      2. Exceed Customer Requirements</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+                <Paragraph>
+                  <TextRuns>
+                    <TextRun>
+                      <Value>      3. Continuous Improvement</Value>
+                      <Style>
+                        <FontSize>9pt</FontSize>
+                        <FontWeight>Normal</FontWeight>
+                      </Style>
+                    </TextRun>
+                  </TextRuns>
+                  <Style>
+                    <TextAlign>Left</TextAlign>
+                  </Style>
+                </Paragraph>
+              </Paragraphs>
+              <rd:DefaultName>Textbox4</rd:DefaultName>
+              <Top>0.21529in</Top>
+              <Left>0.06944in</Left>
+              <Height>0.84722in</Height>
+              <Width>2.36112in</Width>
+              <Style>
+                <Border>
+                  <Style>Solid</Style>
+                </Border>
+                <PaddingLeft>2pt</PaddingLeft>
+                <PaddingRight>2pt</PaddingRight>
+                <PaddingTop>2pt</PaddingTop>
+                <PaddingBottom>2pt</PaddingBottom>
+              </Style>
+            </Textbox>
+          </ReportItems>
+          <KeepTogether>true</KeepTogether>
+          <Left>7.5in</Left>
+          <Height>1.30223in</Height>
+          <Width>2.5in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Rectangle>
+        <Rectangle Name="Rectangle2">
+          <ReportItems>
+            <Image Name="Irwin_Logo">
+              <Source>Embedded</Source>
+              <Value>logo</Value>
+              <Sizing>FitProportional</Sizing>
+              <Height>1.16667in</Height>
+              <Width>1.5in</Width>
+              <Style>
+                <Border>
+                  <Style>None</Style>
+                </Border>
+              </Style>
+            </Image>
+          </ReportItems>
+          <KeepTogether>true</KeepTogether>
+          <Height>1.30223in</Height>
+          <Width>2.5in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+          </Style>
+        </Rectangle>
+        <Textbox Name="Textbox1">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Supplier Scorecard</Value>
+                  <Style>
+                    <FontSize>22pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.21529in</Top>
+          <Left>2.5in</Left>
+          <Height>0.39931in</Height>
+          <Width>5in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="supplierName">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!supplierName.Value, "Suppliers")</Value>
+                  <Style>
+                    <FontSize>16pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>supplierName</rd:DefaultName>
+          <Top>0.61459in</Top>
+          <Left>2.5in</Left>
+          <Height>0.3125in</Height>
+          <Width>5in</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Textbox Name="date">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!date.Value, "Performance")</Value>
+                  <Style>
+                    <FontSize>12pt</FontSize>
+                    <Format>MMMM, yyyy</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>date</rd:DefaultName>
+          <Top>0.92709in</Top>
+          <Left>2.5in</Left>
+          <Height>0.23958in</Height>
+          <Width>5in</Width>
+          <ZIndex>4</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line1">
+          <Top>1.37167in</Top>
+          <Height>0in</Height>
+          <Width>10in</Width>
+          <ZIndex>5</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+              <Width>2pt</Width>
+            </Border>
+          </Style>
+        </Line>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>1in</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
+      <ReportItems>
+        <Textbox Name="Textbox2">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Irwin Seating Company</Value>
+                  <Style>
+                    <FontSize>9pt</FontSize>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>3251 Fruit Ridge NW</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <TextDecoration>None</TextDecoration>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Grand Rapids, MI 49544</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <TextDecoration>None</TextDecoration>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>(616) 574-7400</Value>
+                  <Style>
+                    <FontStyle>Normal</FontStyle>
+                    <FontSize>7pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <TextDecoration>None</TextDecoration>
+                    <Color>#000000</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox2</rd:DefaultName>
+          <Top>0.43542in</Top>
+          <Height>0.56458in</Height>
+          <Width>10in</Width>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+        <Line Name="Line2">
+          <Top>0.0175in</Top>
+          <Height>0in</Height>
+          <Width>10in</Width>
+          <ZIndex>1</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+              <Width>2pt</Width>
+            </Border>
+          </Style>
+        </Line>
+        <Line Name="Line3">
+          <Top>0.09042in</Top>
+          <Height>0in</Height>
+          <Width>10in</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>Solid</Style>
+              <Width>2pt</Width>
+            </Border>
+          </Style>
+        </Line>
+        <Textbox Name="Textbox3">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>Dedicated to Customer Satisfaction, employee well-being, and profitable growth</Value>
+                  <Style>
+                    <FontStyle>Italic</FontStyle>
+                    <FontFamily>Calibri</FontFamily>
+                    <FontSize>11pt</FontSize>
+                    <FontWeight>Normal</FontWeight>
+                    <TextDecoration>None</TextDecoration>
+                    <Color>#4a442a</Color>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style>
+                <TextAlign>Center</TextAlign>
+              </Style>
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox3</rd:DefaultName>
+          <Top>0.15986in</Top>
+          <Height>0.25in</Height>
+          <Width>10in</Width>
+          <ZIndex>3</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
+      </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageFooter>
+    <PageHeight>8.5in</PageHeight>
+    <PageWidth>11in</PageWidth>
+    <LeftMargin>0.5in</LeftMargin>
+    <RightMargin>0.5in</RightMargin>
+    <TopMargin>0.5in</TopMargin>
+    <BottomMargin>0.5in</BottomMargin>
+    <Style />
+  </Page>
+  <EmbeddedImages>
+    <EmbeddedImage Name="logo">
+      <MIMEType>image/jpeg</MIMEType>
+      <ImageData>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</ImageData>
+    </EmbeddedImage>
+  </EmbeddedImages>
+  <rd:ReportID>db31f8dc-23b6-42c2-ba73-a2b84e57ef39</rd:ReportID>
+  <rd:ReportUnitType>Inch</rd:ReportUnitType>
+</Report>
